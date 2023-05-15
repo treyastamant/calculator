@@ -4,7 +4,7 @@ let num2 = 2;
 let displayValue;
 
 const display = document.querySelector('#display');
-for (let i = 0; i <= 10; i++) {
+for (let i = 0; i < 10; i++) {
   const num = document.getElementById(i);
   num.addEventListener('click', () => {
     display.textContent += i;
@@ -15,6 +15,23 @@ for (let i = 0; i <= 10; i++) {
     display.textContent = "";
   });
 }
+
+for (let i = 1; i < 5; i++) {
+  const oper = document.getElementById('op' + i);
+  oper.addEventListener('click', () => {
+    let x = oper.textContent;
+    display.textContent += " " + x + " ";
+  });
+}
+
+
+
+const equals = document.querySelector('#op5');
+  equals.addEventListener('click', () => {
+    displayValue = display.textContent;
+    console.log(displayValue);
+    operate('+', 4, 4);
+  });
 
 
 
@@ -46,8 +63,8 @@ function operate(op, a, b) {
 
 
 
-console.log(addIt(2, 2));
-console.log(subtractIt(2, 2));
-console.log(multiplyIt(2, 2));
-console.log(divideIt(2, 2));
-console.log(operate(op, num1, num2));
+// console.log(addIt(2, 2));
+// console.log(subtractIt(2, 2));
+// console.log(multiplyIt(2, 2));
+// console.log(divideIt(2, 2));
+// console.log(operate(op, num1, num2));

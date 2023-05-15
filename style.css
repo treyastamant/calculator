@@ -1,0 +1,43 @@
+body {
+  margin: 0px auto; 
+  width: 350px;
+  text-align: center;
+}
+
+#calc {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#display {
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 50px;
+  padding: 10px;
+}
+#buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+#numbers {
+  width: 175px;
+}
+#operators {
+  width: 125px;
+}
+
+#numbers, #operators {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+#numbers button, #operators button {
+  width: 50px;
+  height: 50px;
+}
+
+
