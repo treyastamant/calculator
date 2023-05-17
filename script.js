@@ -1,7 +1,3 @@
-let num1 = 5;
-let op = "+";
-let num2 = 2;
-
 const display = document.querySelector('#display');
 const calculator = document.querySelector('#calc');
 const buttons = document.querySelector('#buttons');
@@ -11,7 +7,6 @@ const operators = document.querySelectorAll('.op');
     if (e.target.matches('button')) {
       const button = e.target;
       const action = button.dataset.type;
-      const buttonContent = button.textContent;
       const displayContent = display.textContent;
       const previousButton = buttons.dataset.previousButton;
 
