@@ -39,6 +39,14 @@ const operators = document.querySelectorAll('.op');
       action === 'subtract' ||
       action === 'multiply' ||
       action === 'divide') {
+        const valueOne = calculator.dataset.valueOne;
+        const operator = calculator.dataset.operator;
+        const valueTwo = display.textContent;
+        
+        if (valueOne && operator) {
+          display.textContent = calculate(valueOne, operator, valueTwo);
+        }
+
         button.className = 'active';
         buttons.dataset.previousButton = 'operator';
         calculator.dataset.valueOne = display.textContent;
