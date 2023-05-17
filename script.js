@@ -1,84 +1,54 @@
 let num1 = 5;
 let op = "+";
 let num2 = 2;
-let displayValue = [];
 
 const display = document.querySelector('#display');
-for (let i = 0; i < 10; i++) {
-  const num = document.getElementById(i);
-  num.addEventListener('click', () => {
-    display.textContent += i;
-    displayValue.push(i);
-    console.log(displayValue, 'Display Value')
-  });
-}
-
-for (let i = 1; i < 5; i++) {
-  const oper = document.getElementById('op' + i);
-  oper.addEventListener('click', () => {
-    let x = oper.textContent;
-    display.textContent += ` ${x} `;
-    displayValue.push(x);
-  });
-}
-
-const clear = document.querySelector('#clear');
-clear.addEventListener('click', () => {
-  display.textContent = "";
-});
-
-const equals = document.querySelector('#op5');
-  equals.addEventListener('click', () => {
-    console.log(displayValue);
-    // displayValue.split(' ');
-    console.log(displayValue);
-    num1 = displayValue[0];
-    op = displayValue[1];
-    num2 = displayValue[2];
+const calculator = document.querySelector('#calc');
+const buttons = document.querySelector('#buttons')
+  buttons.addEventListener('click', (e) => {
+    if (e.target.matches('button')) {
+      const button = e.target;
+      const action = button.dataset.type;
+      const buttonContent = button.textContent;
+      const displayContent = display.textContent;
+      const previousButton = buttons.dataset.previousButton;
     
-    let ans = operate(op, num1, num2);
-    console.log(ans);
+
+      if (!action) {
+        buttons.dataset.previousButton = 'number';
+        if (displayContent === '0' || previousButton === 'operator' || previousButton === 'calculate') {
+          display.textContent = button.textContent;
+        } else {
+          display.textContent = displayContent + button.textContent;
+        }
+      }
+      if (action === 'clear') {
+        display.textContent = "0";
+        buttons.dataset.previousButton = 'clear';
+    }
+      if (action === 'add' || 
+      action === 'subtract' ||
+      action === 'multiply' ||
+      action === 'divide') {
+        button.className = 'active';
+        buttons.dataset.previousButton = 'operator';
+        calculator.dataset.valueOne = display.textContent;
+        calculator.dataset.operator = action;
+      }
+      if (action === 'calculate') {
+        buttons.dataset.previousButton = 'calculate';
+        const valueOne = calculator.dataset.valueOne;
+        const operator = calculator.dataset.operator;
+        const valueTwo = display.textContent;
+        console.log(valueOne, operator, valueTwo);
+        display.textContent = calculate(valueOne, operator, valueTwo);
+      }
+    }
   });
 
-
-
-// Calculate functions
-function addIt(a, b) {
-  return a + b;
+function calculate(n1, op, n2) {
+  if (op === 'add') return parseFloat(n1) + parseFloat(n2);
+  if (op === 'subtract') return parseFloat(n1) - parseFloat(n2);
+  if (op === 'multiply') return parseFloat(n1) * parseFloat(n2);
+  if (op === 'divide') return parseFloat(n1) / parseFloat(n2);
 }
-
-// function addIt(array) {
-//   for (let i = 0; i <= array.length; i++){
-//     let answer = 
-//   }
-//   return a + b;
-// }
-
-function subtractIt(a, b) {
-  return a - b;
-}
-
-function multiplyIt(a, b) {
-  return a * b;
-}
-
-function divideIt(a, b) {
-  return a / b;
-}
-
-function operate(op, a, b) {
-  if (op === "+") return addIt(a, b);
-  if (op === "-") return subtractIt(a, b);
-  if (op === "*") return multiplyIt(a, b);
-  if (op === "/") return divideIt(a, b);
-}
-
-
-
-
-
-// console.log(addIt(2, 2));
-// console.log(subtractIt(2, 2));
-// console.log(multiplyIt(2, 2));
-// console.log(divideIt(2, 2));
-// console.log(operate(op, num1, num2));
