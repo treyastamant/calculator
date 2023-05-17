@@ -4,7 +4,9 @@ let num2 = 2;
 
 const display = document.querySelector('#display');
 const calculator = document.querySelector('#calc');
-const buttons = document.querySelector('#buttons')
+const buttons = document.querySelector('#buttons');
+const operators = document.querySelectorAll('.op');
+
   buttons.addEventListener('click', (e) => {
     if (e.target.matches('button')) {
       const button = e.target;
@@ -12,7 +14,10 @@ const buttons = document.querySelector('#buttons')
       const buttonContent = button.textContent;
       const displayContent = display.textContent;
       const previousButton = buttons.dataset.previousButton;
-    
+
+      operators.forEach((e) => {
+        e.classList.remove('active');
+      });
 
       if (!action) {
         buttons.dataset.previousButton = 'number';
@@ -22,10 +27,14 @@ const buttons = document.querySelector('#buttons')
           display.textContent = displayContent + button.textContent;
         }
       }
-      if (action === 'clear') {
-        display.textContent = "0";
-        buttons.dataset.previousButton = 'clear';
-    }
+
+      if (action === 'decimal') {
+        if (!displayContent.includes('.')) {display.textContent = displayContent + '.';}
+        else {display.textContent = displayContent;}
+      }
+
+      if (action === 'clear') display.textContent = "0";
+
       if (action === 'add' || 
       action === 'subtract' ||
       action === 'multiply' ||
@@ -35,6 +44,7 @@ const buttons = document.querySelector('#buttons')
         calculator.dataset.valueOne = display.textContent;
         calculator.dataset.operator = action;
       }
+      
       if (action === 'calculate') {
         buttons.dataset.previousButton = 'calculate';
         const valueOne = calculator.dataset.valueOne;
