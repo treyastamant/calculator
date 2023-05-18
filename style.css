@@ -1,13 +1,16 @@
+html {
+  background-color: #ffefe9;
+}
 body {
+  background-color: #fff;
   margin: 0px auto; 
   width: 280px;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  border: .05px solid #999;
   border-radius: 10px;
   margin-top: 40px;
   padding: 25px;
-  box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.18);
+  box-shadow: 2px 2px 6px 1px rgba(0,0,0,0.18);
 }
 
 h1 {
@@ -104,6 +107,9 @@ h1 {
 }
 
 @media only screen and (max-width: 600px) {
+  html {
+    background-color: #fff;
+  }
   body {
     border: none;
     box-shadow: none;

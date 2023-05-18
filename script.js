@@ -59,7 +59,6 @@ const operators = document.querySelectorAll('.op');
         const operator = calculator.dataset.operator;
         const valueTwo = display.textContent;
         display.textContent = calculate(valueOne, operator, valueTwo);
-        console.log(previousButton);
       }
     }
   });
