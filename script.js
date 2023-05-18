@@ -37,12 +37,12 @@ const operators = document.querySelectorAll('.op');
         const valueOne = calculator.dataset.valueOne;
         const operator = calculator.dataset.operator;
         const valueTwo = display.textContent;
-        
+
         if (valueOne && operator) {
           display.textContent = calculate(valueOne, operator, valueTwo);
         }
 
-        button.className = 'active';
+        button.classList = 'active';
         buttons.dataset.previousButton = 'operator';
         calculator.dataset.valueOne = display.textContent;
         calculator.dataset.operator = action;
@@ -54,6 +54,7 @@ const operators = document.querySelectorAll('.op');
         const operator = calculator.dataset.operator;
         const valueTwo = display.textContent;
         display.textContent = calculate(valueOne, operator, valueTwo);
+        console.log(previousButton);
       }
     }
   });

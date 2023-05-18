@@ -3,7 +3,7 @@ body {
   width: 280px;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  border: .1px solid;
+  border: .05px solid #999;
   border-radius: 10px;
   margin-top: 40px;
   padding: 25px;
@@ -82,6 +82,14 @@ h1 {
   background-color: #ffa483;
 }
 
+#operators .active {
+  background-color: #ff7f50;
+}
+
+#operators .active:hover {
+  background-color: #ff7f50;
+}
+
 #numbers button {
   width: 50px;
   height: 50px;
@@ -93,11 +101,6 @@ h1 {
 #numbers button:hover {
   background-color: #ffb79d;
   box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.18);
-}
-
-
-.active {
-  background-color: #ffa483;
 }
 
 @media only screen and (max-width: 600px) {
