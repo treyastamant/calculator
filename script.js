@@ -28,17 +28,22 @@ const operators = document.querySelectorAll('.op');
         else {display.textContent = displayContent;}
       }
 
-      if (action === 'clear') display.textContent = "0";
+      if (action === 'clear') {
+        display.textContent = "0";
+        calculator.dataset.valueOne = '';
+        calculator.dataset.operator = '';
+      }
 
       if (action === 'add' || 
       action === 'subtract' ||
       action === 'multiply' ||
       action === 'divide') {
+     
         const valueOne = calculator.dataset.valueOne;
         const operator = calculator.dataset.operator;
         const valueTwo = display.textContent;
 
-        if (valueOne && operator) {
+        if (valueOne && operator && previousButton != 'operator' && previousButton != 'calculate') {
           display.textContent = calculate(valueOne, operator, valueTwo);
         }
 
@@ -48,7 +53,7 @@ const operators = document.querySelectorAll('.op');
         calculator.dataset.operator = action;
       }
       
-      if (action === 'calculate') {
+      if (action === 'calculate' && previousButton != 'calculate') {
         buttons.dataset.previousButton = 'calculate';
         const valueOne = calculator.dataset.valueOne;
         const operator = calculator.dataset.operator;
