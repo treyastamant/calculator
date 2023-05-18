@@ -53,7 +53,6 @@ const operators = document.querySelectorAll('.op');
         const valueOne = calculator.dataset.valueOne;
         const operator = calculator.dataset.operator;
         const valueTwo = display.textContent;
-        console.log(valueOne, operator, valueTwo);
         display.textContent = calculate(valueOne, operator, valueTwo);
       }
     }

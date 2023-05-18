@@ -12,7 +12,6 @@
       <div id="display">0</div>
       <div id="buttons">
         <div id="numbers">
-          <button>0</button>
           <button>1</button>
           <button>2</button>
           <button>3</button>
@@ -22,15 +21,18 @@
           <button>7</button>
           <button>8</button>
           <button>9</button>
+          <button>0</button>
           <button data-type="decimal">.</button>
           <button data-type="clear">clear</button>
         </div> 
         <div id="operators">
-          <button data-type="add" class="op">+</button>
-          <button data-type="subtract" class="op">-</button>
-          <button data-type="multiply" class="op">x</button>
-          <button data-type="divide" class="op">/</button>
-          <button data-type="calculate">=</button>
+          <div id="mainOps">
+            <button data-type="add">+</button>
+            <button data-type="subtract">-</button>
+            <button data-type="multiply">x</button>
+            <button data-type="divide">/</button>
+          </div>
+          <button data-type="calculate" id="equals">=</button>
         </div>
       </div>
 
