@@ -24,7 +24,9 @@ const operators = document.querySelectorAll('.op');
       }
 
       if (action === 'decimal') {
+        buttons.dataset.previousButton = 'decimal';
         if (!displayContent.includes('.')) {display.textContent = displayContent + '.';}
+        else if (previousButton === 'operator') {display.textContent = "0."}
         else {display.textContent = displayContent;}
       }
 
@@ -63,9 +65,25 @@ const operators = document.querySelectorAll('.op');
     }
   });
 
+let ans;
+
 function calculate(n1, op, n2) {
-  if (op === 'add') return parseFloat(n1) + parseFloat(n2);
-  if (op === 'subtract') return parseFloat(n1) - parseFloat(n2);
-  if (op === 'multiply') return parseFloat(n1) * parseFloat(n2);
-  if (op === 'divide') return parseFloat(n1) / parseFloat(n2);
+  if (op === 'add') {
+    ans = parseFloat(n1) + parseFloat(n2);
+    return parseFloat(ans.toFixed(2));
+  }
+  if (op === 'subtract') {
+    ans = parseFloat(n1) - parseFloat(n2);
+    return parseFloat(ans.toFixed(2));
+  }
+
+  if (op === 'multiply') {
+    ans = parseFloat(n1) * parseFloat(n2);
+    return parseFloat(ans.toFixed(2));
+  }
+  
+  if (op === 'divide') {
+    ans = parseFloat(n1) / parseFloat(n2);
+    return parseFloat(ans.toFixed(2));
+  }
 }

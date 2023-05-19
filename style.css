@@ -12,11 +12,13 @@ body {
   margin-top: 40px;
   padding: 25px;
   box-shadow: 2px 2px 6px 1px rgba(0,0,0,0.18);
+  overflow: hidden;
+  overflow-wrap: break-word;
 }
 
 h1 {
-  font-size: 4em;
-  color: #ffb79d;
+  font-size: 3.5em;
+  color: #ff926a;
   font-weight: 900;
   margin: 0px;
   margin-bottom: 10px;
@@ -35,9 +37,12 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.5em;
+  font-size: 2.2em;
   font-weight: 600;
+  overflow-wrap: anywhere;
+  overflow: break-word;
 }
+
 #buttons {
   display: flex;
   gap: 10px;
@@ -69,7 +74,7 @@ h1 {
   width: 40px;
   height: 85px;
   border-radius: 30px;
-  background-color: #ffb79d;
+  background-color: #ffcab6;
   border: none;
 }
 
@@ -113,4 +118,5 @@ h1 {
     border: none;
     box-shadow: none;
   }
+
 }
