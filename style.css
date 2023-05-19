@@ -44,12 +44,10 @@ h1 {
   justify-content: space-between;
 }
 #numbers {
-  /* width: 175px; */
   flex: 2;
   justify-content: flex-start;
 }
 #operators {
-  /* width: 125px; */
   flex: 1;
   justify-content: flex-end;
 }
