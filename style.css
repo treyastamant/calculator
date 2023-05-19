@@ -2,6 +2,7 @@ html {
   background-color: #ffefe9;
 }
 body {
+  color: #000;
   background-color: #fff;
   margin: 0px auto; 
   width: 280px;
@@ -17,7 +18,6 @@ h1 {
   font-size: 4em;
   color: #ffb79d;
   font-weight: 900;
-  /* visibility: hidden; */
   margin: 0px;
   margin-bottom: 10px;
 }
@@ -84,11 +84,12 @@ h1 {
 }
 
 #operators .active {
-  background-color: #ff7f50;
+  background-color: #F2794C;
 }
 
 #operators .active:hover {
-  background-color: #ff7f50;
+  background-color: #F2794C;
+  box-shadow: none;
 }
 
 #numbers button {
@@ -100,7 +101,7 @@ h1 {
 }
 
 #numbers button:hover {
-  background-color: #ffb79d;
+  background-color: #ffa483;
   box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.18);
 }
 
