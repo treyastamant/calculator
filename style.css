@@ -28,7 +28,6 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  
 }
 
 #display {
@@ -48,26 +47,34 @@ h1 {
   gap: 10px;
   justify-content: space-between;
 }
-#numbers {
-  flex: 2;
-  justify-content: flex-start;
-}
-#operators {
-  flex: 1;
-  justify-content: flex-end;
-}
-
-#mainOps {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: space-between;
-}
 
 #numbers, #operators {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+#numbers {
+  flex: 2;
+  justify-content: flex-start;
+}
+
+#numbers button {
+  width: 50px;
+  height: 50px;
+  background-color: #ffefe9;
+  border: none;
+  border-radius: 30px;
+}
+
+#numbers button:hover {
+  background-color: #ffa483;
+  box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.18);
+}
+
+#operators {
+  flex: 1;
+  justify-content: flex-end;
 }
 
 #operators button {
@@ -97,18 +104,14 @@ h1 {
   box-shadow: none;
 }
 
-#numbers button {
-  width: 50px;
-  height: 50px;
-  background-color: #ffefe9;
-  border: none;
-  border-radius: 30px;
+#mainOps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
 }
 
-#numbers button:hover {
-  background-color: #ffa483;
-  box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.18);
-}
+
 
 @media only screen and (max-width: 600px) {
   html {
@@ -117,6 +120,29 @@ h1 {
   body {
     border: none;
     box-shadow: none;
+  }
+
+  #numbers button {
+    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.18);
+  }
+  #numbers button:hover {
+    background-color: #ffcab6;
+  }
+
+  #numbers button:active {
+    background-color: #ffa483;
+  }
+  
+  #operators button {
+    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.18);
+  }
+  
+  #operators button:hover {
+    background-color: #ffcab6;
+  }
+  
+  #operators button:active {
+    background-color: #ffa483;
   }
 
 }
