@@ -1,6 +1,7 @@
 html {
   background-color: #ffefe9;
 }
+
 body {
   color: #000;
   background-color: #fff;
@@ -123,23 +124,17 @@ h1 {
     box-shadow: none;
   }
 
-  button {
+  #numbers button, #operators button {
+    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.18);
     color: #000;
   }
 
-  #numbers button {
-    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.18);
-  }
   #numbers button:hover {
     background-color: #ffefe9;
   }
 
   #numbers button:active {
     background-color: #ffa483;
-  }
-  
-  #operators button {
-    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.18);
   }
   
   #operators button:hover {
