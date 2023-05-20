@@ -126,7 +126,7 @@ h1 {
     box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.18);
   }
   #numbers button:hover {
-    background-color: #ffcab6;
+    background-color: #ffefe9;
   }
 
   #numbers button:active {
@@ -143,6 +143,10 @@ h1 {
   
   #operators button:active {
     background-color: #ffa483;
+  }
+
+  #operators .active {
+    box-shadow: none;
   }
 
 }

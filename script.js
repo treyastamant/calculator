@@ -25,9 +25,19 @@ const operators = document.querySelectorAll('.op');
 
       if (action === 'decimal') {
         buttons.dataset.previousButton = 'decimal';
-        if (!displayContent.includes('.')) {display.textContent = displayContent + '.';}
-        else if (previousButton === 'operator') {display.textContent = "0."}
-        else {display.textContent = displayContent;}
+        if (previousButton === 'calculate') {
+          display.textContent = "0.";
+          calculator.dataset.valueOne = '';
+          calculator.dataset.operator = '';
+        } else if (!displayContent.includes('.')) {
+          display.textContent = displayContent + '.';
+        }
+        else if (previousButton === 'operator') {
+          display.textContent = "0."
+        }
+        else {
+          display.textContent = displayContent;
+        }
       }
 
       if (action === 'clear') {
